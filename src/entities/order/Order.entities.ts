@@ -15,6 +15,7 @@
 
 //     @Column()
 //     total: number;
+
     
 //     @OneToMany(() => OrderDetail, (orderDetail) => orderDetail.order, {
 //         onDelete: "CASCADE"

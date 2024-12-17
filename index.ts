@@ -5,6 +5,7 @@ const cors = require('cors');
 require('dotenv').config()
 let AppDataSource = require('./src/database')
 const productRou = require('./src/routers/product.router')
+const cartRou = require('./src/routers/cart.router')
 // const orderRou = require('./src/routers/orders.router')
 // const orderRou = require('./src/routers/')
 
@@ -21,6 +22,8 @@ AppDataSource.initialize().then(async () => {
 // app.use('/user', userRou)
 // app.use('/order', orderRou)
 app.use('/product', productRou)
+app.use('/cart', cartRou)
+
 
 
 app.listen(3000, () => {

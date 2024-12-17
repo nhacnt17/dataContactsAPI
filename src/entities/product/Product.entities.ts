@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Cart } from "../cart/cart.entities";
 
 @Entity()
 export class Product {
@@ -14,11 +15,12 @@ export class Product {
     @Column()
     quantity: number;
 
-    // @Column({ default: true })
-    // isActive: boolean;
+    @Column({ nullable: true })
+    group: string;
 
-    // @OneToMany(() => OrderDetail, (orderdetail) => orderdetail.product, {
-    //     onDelete: "CASCADE"
-    // })
-    // orderDetails: OrderDetail[]
+
+    @OneToMany(() => Cart, (cart) => cart.product, {
+        onDelete: "CASCADE"
+    })
+    carts: Cart[]
 }

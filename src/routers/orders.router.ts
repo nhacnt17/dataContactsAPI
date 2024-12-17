@@ -1,8 +1,8 @@
-const orderRoute = require("express").Router();
+// const orderRoute = require("express").Router();
 
-const OrderCtrl = require('../controllers/order.controller')
+// const OrderCtrl = require('../controllers/order.controller')
 
 
-orderRoute.get('/get-list', OrderCtrl.getAll)
+// orderRoute.get('/get-list', OrderCtrl.pushCart)
 
-module.exports = orderRoute
+// module.exports = orderRoute
