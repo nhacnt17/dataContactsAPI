@@ -2,6 +2,7 @@ import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { Product } from "../entities/product/Product.entities";
 import { Cart } from "../entities/cart/cart.entities";
+import { Favourite } from "../entities/favourite/favourite.entities";
 
 
 const AppDataSource = new DataSource({
@@ -11,7 +12,7 @@ const AppDataSource = new DataSource({
     database: process.env.DATABASE_NAME,
     password: process.env.DATABASE_PASSWORD,
     port: process.env.DATABASE_PORT ? Number(process.env.DATABASE_PORT) : 5432,
-    entities: [Product, Cart],
+    entities: [Product, Cart, Favourite],
     synchronize: true,
 });
 

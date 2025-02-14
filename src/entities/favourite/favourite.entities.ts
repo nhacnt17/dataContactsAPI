@@ -2,24 +2,17 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "t
 import { Product } from "../product/Product.entities";
 
 @Entity()
-export class Cart {
-
+export class Favourite {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
-    date: Date;
-
-    @Column()
-    quantity: number
-
-    @Column()
-    deviceId: string
-
-    @ManyToOne(() => Product, (product) => product.carts, { 
+    @ManyToOne(() => Product, (product) => product.favourites, { 
         onDelete: "CASCADE",
         nullable: false
     })
     @JoinColumn()
     product: Product;
+
+    @Column()
+    deviceId: string;
 }

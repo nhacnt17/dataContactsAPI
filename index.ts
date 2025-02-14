@@ -6,6 +6,9 @@ require('dotenv').config()
 let AppDataSource = require('./src/database')
 const productRou = require('./src/routers/product.router')
 const cartRou = require('./src/routers/cart.router')
+const favouriteRou = require('./src/routers/favourite.router')
+
+
 // const orderRou = require('./src/routers/orders.router')
 // const orderRou = require('./src/routers/')
 
@@ -23,6 +26,8 @@ AppDataSource.initialize().then(async () => {
 // app.use('/order', orderRou)
 app.use('/product', productRou)
 app.use('/cart', cartRou)
+app.use('/favourites', favouriteRou); 
+
 
 
 

@@ -1,5 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Cart } from "../cart/cart.entities";
+import { Favourite } from "../favourite/favourite.entities";
 
 @Entity()
 export class Product {
@@ -23,4 +24,10 @@ export class Product {
         onDelete: "CASCADE"
     })
     carts: Cart[]
+
+    @OneToMany(() => Favourite, (favourite) => favourite.product, {
+        cascade: true
+    })
+    favourites: Favourite[];
+
 }
